@@ -1,37 +1,28 @@
-## Welcome to GitHub Pages
+# 易换宝－后端API文档
 
-You can use the [editor on GitHub](https://github.com/Fushengshe/Market/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+你可以从Github上找到源码[Github 传送门](https://github.com/Fushengshe/Market)
+***
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+##测试API 
+前端应该使用fetch方法与后端进行尝试的数据交互，交互地址为：
+>http://www.fushengshe.com/Market/public/index.php/Index/Index/login_test
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+数据传输方式为：POST
 
-```markdown
-Syntax highlighted code block
+数据传输格式为：JSON:
 
-# Header 1
-## Header 2
-### Header 3
+`body: JSON.stringify({
+                 mobile: '111',
+                 password: '121212'
+             })`
+             
+fetch中需要写明的header为：
+`"Content-type":"application/json"`
 
-- Bulleted
-- List
+测试接口会将POST收到的数据悉数返回，同样也是JSON格式
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Fushengshe/Market/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
