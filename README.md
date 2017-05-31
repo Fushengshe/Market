@@ -6,6 +6,7 @@
 
 ##测试API 
 前端应该使用fetch方法与后端进行尝试的数据交互，交互地址为：
+(有的Apache可能在php方法存在header的情况下localhost调试会500 ，如果在你的电脑上面500了，请注释掉方法前面的header，并检查文件权限)
 >http://www.fushengshe.com/Market/public/index.php/Index/Index/login_test
 
 数据传输方式为：POST
