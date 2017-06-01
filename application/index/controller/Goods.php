@@ -15,17 +15,17 @@ class Goods extends Controller
 {
     public function showlist(){
         //test function
-//        header('Access-Control-Allow-Origin : *');
-//        header('Access-Control-Allow-Methods : POST,GET,PUT,DELETE,OPTIONS');
-//        header('Access-Control-Allow-Headers : token,accept,content-type,X-Requested-With');
+        header('Access-Control-Allow-Origin : *');
+        header('Access-Control-Allow-Methods : POST,GET,PUT,DELETE,OPTIONS');
+        header('Access-Control-Allow-Headers : token,accept,content-type,X-Requested-With');
         $Goods = new GoodsModel();
         $res = $Goods -> showGoodsList('0');
         return json($res);
     }
     public function goods_add(){
-//        header('Access-Control-Allow-Origin : *');
-//        header('Access-Control-Allow-Methods : POST,GET,PUT,DELETE,OPTIONS');
-//        header('Access-Control-Allow-Headers : token,accept,content-type,X-Requested-With');
+        header('Access-Control-Allow-Origin : *');
+        header('Access-Control-Allow-Methods : POST,GET,PUT,DELETE,OPTIONS');
+        header('Access-Control-Allow-Headers : token,accept,content-type,X-Requested-With');
 
         if(!session('user_username')){
             return json(['status'=>0,'msg'=>'请先登录']);
@@ -40,9 +40,9 @@ class Goods extends Controller
         }
     }
     public function goods_del(){
-//        header('Access-Control-Allow-Origin : *');
-//        header('Access-Control-Allow-Methods : POST,GET,PUT,DELETE,OPTIONS');
-//        header('Access-Control-Allow-Headers : token,accept,content-type,X-Requested-With');
+        header('Access-Control-Allow-Origin : *');
+        header('Access-Control-Allow-Methods : POST,GET,PUT,DELETE,OPTIONS');
+        header('Access-Control-Allow-Headers : token,accept,content-type,X-Requested-With');
         if(!session('user_username')){
             return json(['status'=>0,'msg'=>'请先登录']);
         }
@@ -56,9 +56,9 @@ class Goods extends Controller
         }
     }
     public function goods_detail(){
-//        header('Access-Control-Allow-Origin : *');
-//        header('Access-Control-Allow-Methods : POST,GET,PUT,DELETE,OPTIONS');
-//        header('Access-Control-Allow-Headers : token,accept,content-type,X-Requested-With');
+        header('Access-Control-Allow-Origin : *');
+        header('Access-Control-Allow-Methods : POST,GET,PUT,DELETE,OPTIONS');
+        header('Access-Control-Allow-Headers : token,accept,content-type,X-Requested-With');
         $Goods = new GoodsModel();
         $id = Request::instance()->get('id');
         $res = $Goods -> goodsDetail($id);
@@ -69,9 +69,9 @@ class Goods extends Controller
         }
     }
     public function goods_mod(){
-//        header('Access-Control-Allow-Origin : *');
-//        header('Access-Control-Allow-Methods : POST,GET,PUT,DELETE,OPTIONS');
-//        header('Access-Control-Allow-Headers : token,accept,content-type,X-Requested-With');
+        header('Access-Control-Allow-Origin : *');
+        header('Access-Control-Allow-Methods : POST,GET,PUT,DELETE,OPTIONS');
+        header('Access-Control-Allow-Headers : token,accept,content-type,X-Requested-With');
         $Goods = new GoodsModel();
         $data = Request::instance()->get();
         $res = $Goods -> goodsModer($data);

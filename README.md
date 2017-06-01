@@ -121,3 +121,37 @@ hobbys(string) | 用户爱好  | 电脑，书法
 失败后返回
 
 `{"status":0,"msg":"信息修改失败"}`
+
+###用户详情查询
+
+数据传输方式：POST
+数据传输格式:JSON
+
+参数(类型) | 说明 | 示例
+----|------|----
+id(int) | 传入用户ID  | 2
+
+访问API成功后返回
+
+`{"status":1,"data":[{"id":3,"username":"guoqingzhe","password":"e10adc3949ba59abbe56e057f20f883e","usergroup":1,"userstatus":0,"user_attr_id":1}]}`
+
+访问API失败后返回
+
+`{"status":0,"msg":"信息查询失败"}`
+
+###用户删除
+
+数据传输方式：POST
+数据传输格式:JSON
+
+参数(类型) | 说明 | 示例
+----|------|----
+id(int) | 传入用户ID  | 2
+
+访问API成功后返回
+
+`{"status":1,"msg":"删除成功"}`
+
+访问API失败后返回
+
+`{"status":0,"msg":"删除失败"}`

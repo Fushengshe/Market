@@ -15,9 +15,9 @@ use app\index\model\UserModel;
 class Users extends Controller
 {
     public function user_list(){
-        //header('Access-Control-Allow-Origin : *');//有的Apache可能需要关掉header才能进行线下localhost调试
-        //header('Access-Control-Allow-Methods : POST,GET,PUT,DELETE,OPTIONS');
-        //header('Access-Control-Allow-Headers : token,accept,content-type,X-Requested-With');
+        header('Access-Control-Allow-Origin : *');//有的Apache可能需要关掉header才能进行线下localhost调试
+        header('Access-Control-Allow-Methods : POST,GET,PUT,DELETE,OPTIONS');
+        header('Access-Control-Allow-Headers : token,accept,content-type,X-Requested-With');
 
         //$post_data  = Request::instance()->post();
         if(!session('user_username')){
@@ -28,9 +28,9 @@ class Users extends Controller
         return json($data);
     }
     public function user_del(){
-        //header('Access-Control-Allow-Origin : *');//有的Apache可能需要关掉header才能进行线下localhost调试
-        //header('Access-Control-Allow-Methods : POST,GET,PUT,DELETE,OPTIONS');
-        //header('Access-Control-Allow-Headers : token,accept,content-type,X-Requested-With');
+        header('Access-Control-Allow-Origin : *');//有的Apache可能需要关掉header才能进行线下localhost调试
+        header('Access-Control-Allow-Methods : POST,GET,PUT,DELETE,OPTIONS');
+        header('Access-Control-Allow-Headers : token,accept,content-type,X-Requested-With');
         if(!session('user_username')){
             return ['status'=>0,'msg'=>'请先登录'];
         }
@@ -46,9 +46,9 @@ class Users extends Controller
         }
     }
     public function user_add(){
-        //header('Access-Control-Allow-Origin : *');//有的Apache可能需要关掉header才能进行线下localhost调试
-        //header('Access-Control-Allow-Methods : POST,GET,PUT,DELETE,OPTIONS');
-        //header('Access-Control-Allow-Headers : token,accept,content-type,X-Requested-With');
+        header('Access-Control-Allow-Origin : *');//有的Apache可能需要关掉header才能进行线下localhost调试
+        header('Access-Control-Allow-Methods : POST,GET,PUT,DELETE,OPTIONS');
+        header('Access-Control-Allow-Headers : token,accept,content-type,X-Requested-With');
         $User = new UserModel();
         $data = Request::instance()->post();
 
@@ -60,12 +60,12 @@ class Users extends Controller
         }
     }
     public function user_showdetail(){
-        //header('Access-Control-Allow-Origin : *');//有的Apache可能需要关掉header才能进行线下localhost调试
-        //header('Access-Control-Allow-Methods : POST,GET,PUT,DELETE,OPTIONS');
-        //header('Access-Control-Allow-Headers : token,accept,content-type,X-Requested-With');
+//        header('Access-Control-Allow-Origin : *');//有的Apache可能需要关掉header才能进行线下localhost调试
+//        header('Access-Control-Allow-Methods : POST,GET,PUT,DELETE,OPTIONS');
+//        header('Access-Control-Allow-Headers : token,accept,content-type,X-Requested-With');
 
         $User = new UserModel();
-        $user_id = Request::instance()->post('id');
+        $user_id = Request::instance()->get('id');
 
         $res = $User -> userdetail($user_id);
         if($res){
@@ -75,9 +75,9 @@ class Users extends Controller
         }
     }
     public function user_mod(){
-        //header('Access-Control-Allow-Origin : *');//有的Apache可能需要关掉header才能进行线下localhost调试
-        //header('Access-Control-Allow-Methods : POST,GET,PUT,DELETE,OPTIONS');
-        //header('Access-Control-Allow-Headers : token,accept,content-type,X-Requested-With');
+        header('Access-Control-Allow-Origin : *');//有的Apache可能需要关掉header才能进行线下localhost调试
+        header('Access-Control-Allow-Methods : POST,GET,PUT,DELETE,OPTIONS');
+        header('Access-Control-Allow-Headers : token,accept,content-type,X-Requested-With');
 
         if(!session('user_username')){
             return ['status'=>0,'msg'=>'请先登录'];
@@ -96,9 +96,9 @@ class Users extends Controller
 
 
     public function user_login(){
-        //header('Access-Control-Allow-Origin : *');//有的Apache可能需要关掉header才能进行线下localhost调试
-        //header('Access-Control-Allow-Methods : POST,GET,PUT,DELETE,OPTIONS');
-        //header('Access-Control-Allow-Headers : token,accept,content-type,X-Requested-With');
+        header('Access-Control-Allow-Origin : *');//有的Apache可能需要关掉header才能进行线下localhost调试
+        header('Access-Control-Allow-Methods : POST,GET,PUT,DELETE,OPTIONS');
+        header('Access-Control-Allow-Headers : token,accept,content-type,X-Requested-With');
 
         $User = new UserModel();
         $user_name = Request::instance()->get('username');
