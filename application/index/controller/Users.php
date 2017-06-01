@@ -89,6 +89,7 @@ class Users extends Controller
             Session::set('user_username', $user_name);
             Session::set('user_id', $res[0]['id']);
             Session::set('user_group', $res[0]['group']);
+            //todo token
             return json(['status'=>1,'msg'=>'登陆成功']);
         }else{
             session::clear();
