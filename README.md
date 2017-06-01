@@ -23,6 +23,20 @@ fetch中需要写明的header为：
 
 测试接口会将POST收到的数据悉数返回，同样也是JSON格式
 
+##正片开始
+##用户注册登录管理
+###用户的登录
+>http://www.fushengshe.com/Market/public/index.php/Index/Index/login_test
+
+数据传输方式为：GET
+
+数据传输格式为：JSON:
+
+dog | bird | cat
+----|------|----
+foo | foo  | foo
+bar | bar  | bar
+baz | baz  | baz
 
 
 
