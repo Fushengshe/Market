@@ -32,11 +32,11 @@ fetch中需要写明的header为：
 
 数据传输格式为：JSON:
 
-dog | bird | cat
+参数 | 说明 | 示例
 ----|------|----
-foo | foo  | foo
-bar | bar  | bar
-baz | baz  | baz
+username | 传入用户名  | luqijian
+password | 传入密码  | luqijian123
+
 
 
 
