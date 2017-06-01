@@ -74,6 +74,27 @@ class Users extends Controller
             return json(['status'=>0,'msg'=>'查询信息失败']);
         }
     }
+    public function user_mod(){
+        //header('Access-Control-Allow-Origin : *');//有的Apache可能需要关掉header才能进行线下localhost调试
+        //header('Access-Control-Allow-Methods : POST,GET,PUT,DELETE,OPTIONS');
+        //header('Access-Control-Allow-Headers : token,accept,content-type,X-Requested-With');
+
+        if(!session('user_username')){
+            return ['status'=>0,'msg'=>'请先登录'];
+        }
+        $User = new UserModel();
+        $data = Request::instance()->get();//要求前端传进来的有id才可以
+
+        $res = $User -> user_moder($data);
+        if($res){
+            return json(['status'=>1,'msg'=>'信息修改成功']);
+        }else{
+            return json(['status'=>0,'msg'=>'信息修改失败']);
+        }
+
+    }
+
+
     public function user_login(){
         //header('Access-Control-Allow-Origin : *');//有的Apache可能需要关掉header才能进行线下localhost调试
         //header('Access-Control-Allow-Methods : POST,GET,PUT,DELETE,OPTIONS');

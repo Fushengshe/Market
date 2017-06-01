@@ -13,7 +13,7 @@ use phpDocumentor\Reflection\Types\Null_;
 use think\Model;
 use think\Db;
 use think\Session;
-class UserModel
+class UserModel extends Model
 {
     public function showlist($cate = '0'){ //cate代表查询的usergroup 0则为全部查询，默认为0
         if($cate == '0'){
@@ -73,6 +73,30 @@ class UserModel
             }
         }
 
+    }
+    public function user_moder($data){
+        if(
+            $data['id'] == NULL
+            ||$data['truename'] == NULL
+            ||$data['addr'] == NULL
+            ||$data['telephone'] == NULL
+            ||$data['phone'] == NULL
+            ||$data['email'] == NULL
+            ||$data['hobbys'] == NULL
+        ){
+            return false;
+        }else{
+            $db = Db::name('user')
+                ->where('id','=',$data['id'])
+                ->select();
+            $attr_id = $db[0]['user_attr_id'];
+            //var_dump($attr_id);
+            unset($data['id']);
+            $db = Db::name('user_attr')
+                ->where('attr_id','=',$attr_id)
+                ->update($data);
+            return $db;
+        }
     }
 
 }
