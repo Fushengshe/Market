@@ -63,4 +63,20 @@ class GoodsModel extends Model
             return $db;
         }
     }
+    public function goodsModer($data){
+        if(
+            $data['goods_id'] == NULL ||
+            $data['goods_name'] == NULL||
+            $data['goods_type'] == NULL||
+            $data['goods_price'] == NULL
+        ){
+            return false;
+        }
+        else{
+                $db = Db::name('goods')
+                    ->where('goods_id','=',$data['goods_id'])
+                    ->update($data);
+                return $db;
+        }
+    }
 }

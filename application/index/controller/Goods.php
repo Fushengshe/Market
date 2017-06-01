@@ -68,4 +68,17 @@ class Goods extends Controller
             return json(['status'=>0,'msg'=>'查询信息失败']);
         }
     }
+    public function goods_mod(){
+//        header('Access-Control-Allow-Origin : *');
+//        header('Access-Control-Allow-Methods : POST,GET,PUT,DELETE,OPTIONS');
+//        header('Access-Control-Allow-Headers : token,accept,content-type,X-Requested-With');
+        $Goods = new GoodsModel();
+        $data = Request::instance()->get();
+        $res = $Goods -> goodsModer($data);
+        if($res){
+            return json(['status'=>1,'msg'=>'商品信息修改成功']);
+        }else{
+            return json(['status'=>0,'msg'=>'商品信息修改失败']);
+        }
+    }
 }
