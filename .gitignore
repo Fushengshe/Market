@@ -1,0 +1,8 @@
+.idea/
+.Docs/
+.extend/
+.public/
+.runtime/
+.tests/
+.thinkphp/
+.vendor/
